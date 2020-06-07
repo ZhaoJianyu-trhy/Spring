@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--  引入外部配值文件  -->
+    <properties resource="dp.properties"/>
+    <!--    取别名-->
+
+    <settings>
+        <!--        标准的日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--        <setting name="logImpl" value="LOG4J"/>-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <!--        <typeAlias type="com.com.zjy.pojo.User" alias="User"/>-->
+        <package name="com.zjy.pojo"/>
+    </typeAliases>
+
+</configuration>

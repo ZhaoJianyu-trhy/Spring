@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    普通注入-->
+    <bean id="student" class="com.zjy.pojo.Student" name="stu">
+        <property name="name" value="赵小军"></property>
+        <property name="address">
+            <bean class="com.zjy.pojo.Address">
+                <property name="address" value="重庆"></property>
+            </bean>
+        </property>
+
+        <!--        数组注入-->
+        <property name="book">
+            <array>
+                <value>毛泽东选集</value>
+                <value>红与黑</value>
+                <value>水浒传</value>
+            </array>
+        </property>
+
+        <!--             list注入   -->
+        <property name="hobby">
+            <list>
+                <value>钱</value>
+                <value>地位</value>
+                <value>美女</value>
+                <value>代码</value>
+                <value>歌曲</value>
+                <value>电影</value>
+            </list>
+        </property>
+
+<!--        map注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="500238"></entry>
+                <entry key="银行卡" value="中国银行"></entry>
+            </map>
+        </property>
+
+<!--        set注入-->
+        <property name="games">
+            <set>
+                <value>全面战争</value>
+                <value>GTA</value>
+            </set>
+        </property>
+
+<!--        空值注入-->
+        <property name="wife">
+            <null/>
+        </property>
+
+<!--        properties注入-->
+        <property name="info">
+            <props>
+                <prop key="学号">1517030111</prop>
+                <prop key="学科">工科</prop>
+                <prop key="性格">乐观</prop>
+                <prop key="username">root</prop>
+                <prop key="password">123123</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="address" class="com.zjy.pojo.Address">
+        <property name="address" value="重庆"></property>
+    </bean>
+
+</beans>
